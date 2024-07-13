@@ -1,0 +1,289 @@
+@import "./../fonts/stylesheet.css";
+:root {
+  --color-light-xl: #FFF;
+  --color-light-l: #F6F6F6;
+  --color-light-s: #FAFAFA;
+  --color-dark-s: #CDCDCD;
+  --color-dark-m: #B2B2B2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4C4C4C;
+  --color-dark-2xl: #444444;
+  --color-dark-3xl: #292929;
+  --color-primary: #F1CDB3;
+  --color-primary-light: #FDDCC4;
+  --font-main: "Georgia", sans-serif;
+  --font-cards: "Arial", sans-serif;
+}
+
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.header {
+  padding-top: 65px;
+  background: url("../../img/header/noise-transparent.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: auto, auto 908px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.logo-title {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 1.92px;
+  color: var(--color-primary);
+}
+
+.logo-text {
+  color: var(--color-light-xl);
+  font-family: var(--font-cards);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1.3px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.nav-list {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  column-gap: 40px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+}
+
+.nav-link {
+  color: var(--color-dark-s);
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--color-light-s);
+}
+
+.nav-link:active {
+  position: relative;
+}
+
+.nav-link:active::after {
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -9px;
+}
+
+.link-active {
+  color: var(--color-light-s);
+  position: relative;
+}
+
+.link-active::after {
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -7px;
+}
+
+.header-hero {
+  padding-top: 90px;
+  background: url("../../img/header/noise-transparent.png") repeat, radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) no-repeat;
+  background-size: auto;
+}
+
+.header-hero__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-hero__content {
+  padding-top: 165px;
+  max-width: 460px;
+}
+
+.hero-title {
+  font-family: var(--font-main);
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: var(--color-light-s);
+}
+
+.hero-text {
+  font-family: var(--font-cards);
+  color: var(--color-dark-m);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  padding-top: 41px;
+  padding-bottom: 42px;
+}
+
+.button-primary {
+  display: block;
+  background-color: var(--color-primary);
+  color: var(--color-dark-3xl);
+  width: 207px;
+  height: 52px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 15px 0;
+  transition: 0.3s;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.about-pets {
+  width: 300px;
+  height: 385px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  column-gap: 120px;
+}
+
+.about-text-content {
+  max-width: 430px;
+}
+
+.about-title {
+  font-family: var(--font-main);
+  font-size: 35px;
+  padding-bottom: 30px;
+  letter-spacing: 2.1px;
+  color: var(--color-dark-l);
+}
+
+.about-text {
+  font-family: var(--font-cards);
+  font-size: 15px;
+  color: var(--color-dark-xl);
+  line-height: 160%;
+  padding-bottom: 25px;
+}/*# sourceMappingURL=main.css.map */
