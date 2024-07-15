@@ -398,4 +398,47 @@ legend {
 
 .slider__btn--next {
   right: -0.5px;
+}
+
+.help {
+  padding-bottom: 100px;
+}
+
+.help-title {
+  font-family: var(--font-main);
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 2.1px;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  color: var(--color-dark-l);
+}
+
+.help-block {
+  display: flex;
+  gap: 55px 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.help-subject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.help-subject img {
+  width: 60px;
+  height: 60px;
+}
+
+.help-subject p {
+  margin-top: 30px;
+  font-family: var(--font-main);
+  font-size: 20px;
+  color: var(--color-dark-l);
+  letter-spacing: 1.2px;
+  line-height: 115%;
 }/*# sourceMappingURL=main.css.map */
