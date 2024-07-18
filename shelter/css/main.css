@@ -121,6 +121,11 @@ html {
   background-size: auto, auto 908px;
 }
 
+.header--header-pets {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -137,8 +142,26 @@ html {
   color: var(--color-primary);
 }
 
+.logo-title--pets {
+  color: var(--color-dark-l);
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: 1.92px;
+}
+
 .logo-text {
   color: var(--color-light-xl);
+  font-family: var(--font-cards);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1.3px;
+  text-align: center;
+  padding-top: 9px;
+}
+
+.logo-text--pets {
+  color: var(--color-dark-3xl);
   font-family: var(--font-cards);
   font-weight: 400;
   font-size: 13px;
@@ -162,6 +185,14 @@ html {
   transition: 0.3s;
 }
 
+.nav-link--pets {
+  color: var(--color-dark-l);
+  transition: 0.3s;
+}
+.nav-link--pets:hover {
+  color: var(--color-dark-3xl);
+}
+
 .nav-link:hover {
   color: var(--color-light-s);
 }
@@ -180,9 +211,33 @@ html {
   bottom: -9px;
 }
 
+.nav-link--pets:active::after {
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -9px;
+}
+
 .link-active {
   color: var(--color-light-s);
   position: relative;
+}
+
+.link-active--pets {
+  color: var(--color-dark-l);
+  position: relative;
+}
+.link-active--pets:after {
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -7px;
 }
 
 .link-active::after {
@@ -589,4 +644,58 @@ html {
 .footer-image {
   max-width: 100%;
   height: auto;
+}
+
+.pets {
+  padding-top: 80px;
+  padding-bottom: 105px;
+  background: var(--color-light-l);
+}
+
+.pets-title {
+  padding-bottom: 60px;
+}
+
+.pets-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 30px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 57px;
+}
+
+.pagination-button {
+  width: 52px;
+  height: 52px;
+  margin: 0 10px;
+  padding-top: 5px;
+}
+
+.inactive {
+  border-radius: 100px;
+  border: 2px solid var(--color-dark-s);
+  cursor: default;
+}
+
+.active {
+  border-radius: 100px;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+}
+.active:hover {
+  background: var(--color-primary-light);
+}
+
+.active-page {
+  border-radius: 100px;
+  background: var(--color-primary);
+  cursor: default;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,57 @@
+// pets
+
+.pets {
+    padding-top: 80px;
+    padding-bottom: 105px;
+    background: var(--color-light-l);
+}
+
+.pets-title {
+    padding-bottom: 60px;
+}
+
+.pets-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 40px;
+    row-gap: 30px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 57px;
+}
+
+.pagination-button {
+    width: 52px;
+    height: 52px;
+    margin: 0 10px;
+    padding-top: 5px;
+}
+
+.inactive {
+    border-radius: 100px;
+    border: 2px solid var(--color-dark-s);
+
+    cursor: default;
+}
+
+.active {
+    border-radius: 100px;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+
+    &:hover {
+        background: var(--color-primary-light);
+    }
+}
+
+.active-page {
+    border-radius: 100px;
+    background: var(--color-primary);
+    cursor: default;
+}
