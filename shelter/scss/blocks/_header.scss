@@ -6,7 +6,6 @@
                 radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
     background-repeat: repeat, no-repeat;
     background-size: auto, auto 908px;
-    
 }
 
 .header--header-pets {
@@ -71,6 +70,10 @@
 .nav-link {
     color: var(--color-dark-s);
     transition: 0.3s;
+
+    &:hover {
+        color: var(--color-light-s); 
+    }
 }
 
 .nav-link--pets {
@@ -82,38 +85,27 @@
     }
 }
 
-.nav-link:hover {
-    color: var(--color-light-s);
-}
-
 .nav-link:active {
     position: relative;
 }
 
-
-.nav-link:active::after {
-    content: "";
-    position: absolute;
-    background: var(--color-primary);
-    width: 100%;
-    height: 2px;
-    left: 0;
-    bottom: -9px;
-}
-
-.nav-link--pets:active::after {
-    content: "";
-    position: absolute;
-    background: var(--color-primary);
-    width: 100%;
-    height: 2px;
-    left: 0;
-    bottom: -9px;
+.nav-link--pets:active {
+    position: relative;
 }
 
 .link-active {
     color: var(--color-light-s);
     position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        background: var(--color-primary);
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: -7px;
+    }
 }
 
 .link-active--pets {
@@ -129,16 +121,6 @@
     left: 0;
     bottom: -7px;
     }
-}
-
-.link-active::after {    
-    content: "";
-    position: absolute;
-    background: var(--color-primary);
-    width: 100%;
-    height: 2px;
-    left: 0;
-    bottom: -7px;
 }
 
 // header-content

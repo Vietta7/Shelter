@@ -184,6 +184,9 @@ html {
   color: var(--color-dark-s);
   transition: 0.3s;
 }
+.nav-link:hover {
+  color: var(--color-light-s);
+}
 
 .nav-link--pets {
   color: var(--color-dark-l);
@@ -193,44 +196,19 @@ html {
   color: var(--color-dark-3xl);
 }
 
-.nav-link:hover {
-  color: var(--color-light-s);
-}
-
 .nav-link:active {
   position: relative;
 }
 
-.nav-link:active::after {
-  content: "";
-  position: absolute;
-  background: var(--color-primary);
-  width: 100%;
-  height: 2px;
-  left: 0;
-  bottom: -9px;
-}
-
-.nav-link--pets:active::after {
-  content: "";
-  position: absolute;
-  background: var(--color-primary);
-  width: 100%;
-  height: 2px;
-  left: 0;
-  bottom: -9px;
+.nav-link--pets:active {
+  position: relative;
 }
 
 .link-active {
   color: var(--color-light-s);
   position: relative;
 }
-
-.link-active--pets {
-  color: var(--color-dark-l);
-  position: relative;
-}
-.link-active--pets:after {
+.link-active:after {
   content: "";
   position: absolute;
   background: var(--color-primary);
@@ -240,7 +218,11 @@ html {
   bottom: -7px;
 }
 
-.link-active::after {
+.link-active--pets {
+  color: var(--color-dark-l);
+  position: relative;
+}
+.link-active--pets:after {
   content: "";
   position: absolute;
   background: var(--color-primary);
