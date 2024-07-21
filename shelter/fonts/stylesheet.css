@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Arial';
     src: local('Arial Regular'), local('Arial-Regular'),
-        url('arial-regular.ttf') format('ttf');
+        url('./fonts/arial-regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'Arial';
     src: local('Arial Medium'), local('Arial-Italic'),
-        url('arial-italic.ttf') format('ttf');
+        url('./fonts/arial-italic.ttf') format('ttf');
     font-weight: 400;
     font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: 'Georgia';
     src: local('Georgia Regular'), local('Georgia-Regular'),
-        url('georgia-regular.ttf') format('ttf');
+        url('./fonts/georgia-regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
