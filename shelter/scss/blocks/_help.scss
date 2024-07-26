@@ -50,11 +50,26 @@
     color: var(--color-dark-l);
     letter-spacing: 1.2px;
     line-height: 115%;
+
+    @include tablet () {
+        line-height: 115%; 
+        letter-spacing: 1.2px;
+    }
 }
 
 
-.help-subject:nth-child(n+4) {
+.help-subject:nth-child(4),
+.help-subject:nth-child(5),
+.help-subject:nth-child(6) {
     @include tablet () {
-        margin-top: 55px;
+        margin-top: 32px;
+    }
+}
+
+.help-subject:nth-child(7),
+.help-subject:nth-child(8),
+.help-subject:nth-child(9) {
+    @include tablet () {
+        margin-top: 36px;
     }
 }
