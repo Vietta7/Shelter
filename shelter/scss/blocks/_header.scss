@@ -19,6 +19,10 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
+
+    @include tablet () {
+        padding: 0 30px;
+    }
 }
 
 .logo-title {
@@ -27,6 +31,10 @@
     font-size: 32px;
     letter-spacing: 1.92px;
     color: var(--color-primary);
+
+    @include tablet () {
+        padding-top: 0;
+    }
 }
 
 .logo-title--pets {
@@ -130,17 +138,47 @@
     background: url("../../img/header/noise-transparent.png") repeat, 
                 radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) no-repeat;
     background-size: auto;
+    transition: padding-top 0.3s ease, background 0.3s ease;
+
+    @include tablet () {
+        padding-top: 60px;
+    }
 }
 
 .header-hero__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    transition: flex-direction 0.3s ease, justify-content 0.3s ease;
+
+    @include desktop () {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include tablet () {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 }
 
 .header-hero__content {
     padding-top: 165px;
     max-width: 460px;
+    transition: padding-top 0.3s ease, padding-bottom 0.3s ease;
+
+    @include desktop () {
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+
+    @include tablet () {
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
 }
 
 .hero-title {
@@ -184,4 +222,27 @@
 
 .button-primary:hover {
     background-color: var(--color-primary-light);
+}
+
+.button-hero {
+    @include desktop () {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include tablet () {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.hero-dog {
+    transition: width 0.3s ease, height 0.3s ease;
+    @include desktop () {
+        width: 569px;
+        height: 593px;
+        align-self: flex-end;
+    }
 }

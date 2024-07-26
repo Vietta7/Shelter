@@ -3,11 +3,21 @@
 .about {
     padding-top: 100px;
     padding-bottom: 100px;
+
+    @include tablet () {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
 }
 
 .about-pets {
     width: 300px;
     height: 385px;
+
+    @include tablet () {
+        width: 300px;
+        height: 408px;
+    }
 }
 
 .about-content {
@@ -16,6 +26,12 @@
     justify-content: center;
     align-items: flex-start;
     column-gap: 120px;
+
+    @include tablet () {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 80px;
+    }
 }
 
 .about-text-content {
@@ -28,6 +44,11 @@
     padding-bottom: 30px;
     letter-spacing: 2.1px;
     color: var(--color-dark-l);
+
+    @include tablet () {
+        padding-bottom: 25px;
+        line-height: 130%;
+    }
 }
 
 .about-text {
@@ -36,4 +57,10 @@
     color: var(--color-dark-xl);
     line-height: 160%;
     padding-bottom: 25px;
+}
+
+.text-2 {
+    @include tablet () {
+        padding-bottom: 80px;
+    }
 }

@@ -20,6 +20,11 @@
     gap: 55px 120px;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include tablet () {
+        gap: 20px;
+        justify-content: space-around;
+    }
 }
 
 .help-subject {
@@ -27,6 +32,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    @include tablet () {
+        width: calc(33.33% - 20px);
+    }
 }
 
 .help-subject img {
@@ -41,4 +50,11 @@
     color: var(--color-dark-l);
     letter-spacing: 1.2px;
     line-height: 115%;
+}
+
+
+.help-subject:nth-child(n+4) {
+    @include tablet () {
+        margin-top: 55px;
+    }
 }
