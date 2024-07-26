@@ -103,6 +103,10 @@ html {
 	@include mobile () {
 		padding: 0 10px;
 	}
+
+	@include mobile-m () {
+		padding: 0 10px;
+	}
 }
 
 .none {

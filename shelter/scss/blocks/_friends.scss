@@ -8,6 +8,10 @@
     @include tablet () {
         padding-top: 20px;
     }
+
+    @include mobile () {
+        padding-top: 35px;
+    }
 }
 
 .our-friends__title {
@@ -22,6 +26,16 @@
     @include tablet () {
         padding-top: 63px;
     }
+
+    @include mobile () {
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; /* 32.5px */
+        letter-spacing: 1.5px;
+        padding-bottom: 42px;
+        padding-top: 2px;
+    }
 }
 
 .friends-slider-wrapper {
@@ -34,6 +48,18 @@
     @include tablet () {
         padding-right: 64px;
         padding-left: 64px;
+    }
+
+    @include mobile () {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 110px;
+    }
+
+    @include mobile-m() {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 110px;
     }
 }
 
@@ -148,6 +174,16 @@
     @include tablet () {
         left: -10px;
     }
+
+    @include mobile () {
+        left: 57px;
+        top: 83%;
+    }
+
+    @include mobile-m () {
+        left: 57px;
+        top: 83%;
+    }
 }
 
 .slider__btn--next {
@@ -156,6 +192,17 @@
     @include tablet () {
         right: -10px;
     }
+
+    @include mobile () {
+        right: 57px;
+        top: 83%;
+    }
+
+    @include mobile-m () {
+        right: 57px;
+        top: 83%;
+    }
+
 }
 
 .card:nth-child(n+3) {
@@ -164,6 +211,29 @@
     }
 
     @include desktop-s () {
+        display: none;
+    }
+
+    @include mobile () {
+        display: none;
+    }
+
+    @include mobile-m () {
+        display: none;
+    }
+}
+
+.card:nth-child(n+2) {
+
+    @include tablet-s () {
+        display: none;
+    }
+
+    @include mobile () {
+        display: none;
+    }
+
+    @include mobile-m () {
         display: none;
     }
 }
