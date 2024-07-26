@@ -13,6 +13,16 @@
     padding-top: 80px;
     padding-bottom: 60px;
     color: var(--color-dark-l);
+
+    @include mobile () {
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; /* 32.5px */
+        letter-spacing: 1.5px;
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
 }
 
 .help-block {
@@ -25,6 +35,11 @@
         gap: 20px;
         justify-content: space-around;
     }
+
+    @include mobile () {
+        column-gap: 20px;
+        row-gap: 30px;
+    }
 }
 
 .help-subject {
@@ -36,11 +51,20 @@
     @include tablet () {
         width: calc(33.33% - 20px);
     }
+
+    @include mobile () {
+        width: calc(33.33% - 10px);
+    }
 }
 
 .help-subject img {
     width: 60px;
     height: 60px;
+
+    @include mobile () {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .help-subject p {
@@ -54,6 +78,26 @@
     @include tablet () {
         line-height: 115%; 
         letter-spacing: 1.2px;
+    }
+
+    @include mobile () {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 110%; /* 16.5px */
+        letter-spacing: 0.9px;
+        margin-top: 20px;
+        max-width: 170px;
+        min-height: 17px;
+    }
+
+    @include mobile-m () {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 110%; /* 16.5px */
+        letter-spacing: 0.9px;
+        margin-top: 20px;
+        max-width: 170px;
+        min-height: 17px;
     }
 }
 
@@ -71,5 +115,40 @@
 .help-subject:nth-child(9) {
     @include tablet () {
         margin-top: 36px;
+    }
+}
+
+.help-subject:nth-child(4) {
+    @include mobile () {
+        margin-top: 1px;
+        text-align: center;
+    }
+}
+
+.help-subject:nth-child(3),
+.help-subject:nth-child(4) {
+    @include mobile () {
+        margin-top: 1px;
+    }
+}
+
+.help-subject:nth-child(5),
+.help-subject:nth-child(6) {
+    @include mobile () {
+        margin-top: -17px;
+    }
+}
+
+.help-subject:nth-child(7),
+.help-subject:nth-child(8),{
+    @include mobile () {
+        margin-top: -0.4px;
+    }
+}
+
+.help-subject:nth-child(9) {
+    @include mobile () {
+        margin-top: -15px;
+        margin-right: 160px;
     }
 }
