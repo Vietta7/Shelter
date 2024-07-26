@@ -1,0 +1,23 @@
+// burger
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px; 
+    height: 30px; 
+    cursor: pointer;
+
+    @include tablet-s () {
+        display: flex;
+    }
+}
+
+.burger-bar {
+    background-color: var(--color-primary); 
+    height: 4px; 
+    width: 100%; 
+    margin: 4px 0; 
+    transition: 0.3s; 
+}

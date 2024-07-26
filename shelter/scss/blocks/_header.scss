@@ -73,6 +73,10 @@
     column-gap: 40px;
     padding-top: 5px;
     padding-bottom: 8px;
+
+    @include tablet-s () {
+        display: none;
+    }
 }
 
 .nav-link {
