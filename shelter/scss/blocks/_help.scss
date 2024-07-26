@@ -2,6 +2,10 @@
 
 .help {
     padding-bottom: 100px;
+
+    @include mobile () {
+        padding-bottom: 42px;
+    }
 }
 
 .help-title {
