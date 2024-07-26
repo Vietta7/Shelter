@@ -13,6 +13,11 @@
     align-items: flex-start;
     column-gap: 30px;
 
+    @include desktop-s () {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
     @include tablet () {
         flex-direction: column-reverse;
         align-items: center;
@@ -70,6 +75,10 @@
     font-size: 12px;
     font-style: italic;
     line-height: 18px; 
+
+    @include desktop-s () {
+        padding-bottom: 60px;
+    }
 
     @include tablet () {
         padding-bottom: 60px;

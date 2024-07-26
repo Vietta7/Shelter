@@ -162,4 +162,8 @@
     @include tablet () {
         display: none;
     }
+
+    @include desktop-s () {
+        display: none;
+    }
 }
