@@ -18,6 +18,10 @@
     line-height: 130%;
     letter-spacing: 2.1px;
     padding-bottom: 60px;
+
+    @include tablet () {
+        padding-top: 63px;
+    }
 }
 
 .friends-slider-wrapper {
@@ -51,7 +55,7 @@
 
     @include tablet () {
         flex-wrap: nowrap;
-        gap: 20px;
+        gap: 56px;
         width: 100%;
         justify-content: center;
     }
@@ -128,10 +132,13 @@
     }
 
     @include tablet () {
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-top: 21px;
+        padding-bottom: 23px;
     }
 }
 
