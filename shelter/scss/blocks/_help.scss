@@ -37,8 +37,12 @@
     }
 
     @include mobile () {
-        column-gap: 20px;
+        max-width: 300px;
+        margin: 0 auto;
+        column-gap: 30px;
         row-gap: 30px;
+        justify-content: flex-start;
+        padding: 0px 5px;
     }
 }
 
@@ -53,7 +57,10 @@
     }
 
     @include mobile () {
-        width: calc(33.33% - 10px);
+        font-size: 15px;
+        line-height: 110%;
+        background-size: 50px 50px;
+        width: 130px;
     }
 }
 
@@ -101,7 +108,6 @@
     }
 }
 
-
 .help-subject:nth-child(4),
 .help-subject:nth-child(5),
 .help-subject:nth-child(6) {
@@ -125,22 +131,15 @@
     }
 }
 
-.help-subject:nth-child(3),
-.help-subject:nth-child(4) {
-    @include mobile () {
-        margin-top: 1px;
-    }
-}
-
 .help-subject:nth-child(5),
 .help-subject:nth-child(6) {
     @include mobile () {
-        margin-top: -17px;
+        margin-top: -1px;
     }
 }
 
 .help-subject:nth-child(7),
-.help-subject:nth-child(8),{
+.help-subject:nth-child(8) {
     @include mobile () {
         margin-top: -0.4px;
     }
@@ -148,7 +147,7 @@
 
 .help-subject:nth-child(9) {
     @include mobile () {
-        margin-top: -15px;
+        margin-top: -0.7px;
         margin-right: 160px;
     }
 }
