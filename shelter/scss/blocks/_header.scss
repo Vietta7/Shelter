@@ -196,6 +196,20 @@
     font-weight: 400;
     line-height: 130%;
     color: var(--color-light-s);
+
+    @include mobile () {
+        font-size: 25px;
+        line-height: 130%; /* 32.5px */
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+
+    @include mobile-m () {
+        font-size: 25px;
+        line-height: 130%; /* 32.5px */
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
 }
 
 .hero-text {
@@ -207,6 +221,22 @@
     line-height: 160%;
     padding-top: 41px;
     padding-bottom: 42px;
+
+    @include mobile () {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: center;
+    }
+
+    @include mobile-m () {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: center;
+    }
 }
 
 .button-primary {
@@ -252,5 +282,15 @@
         width: 569px;
         height: 593px;
         align-self: flex-end;
+    }
+
+    @include mobile () {
+        width: 260px;
+        height: 271px;
+    }
+
+    @include mobile-m () {
+        width: 260px;
+        height: 271px;
     }
 }

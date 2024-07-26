@@ -99,6 +99,10 @@ html {
 	margin: 0 auto;
 	width: 100%;
 	padding: 0 40px;
+
+	@include mobile () {
+		padding: 0 10px;
+	}
 }
 
 .none {
