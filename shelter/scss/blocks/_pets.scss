@@ -4,12 +4,31 @@
     padding-top: 80px;
     padding-bottom: 105px;
     background: var(--color-light-l);
+
+    @include tablet () {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+
+    @include mobile () {
+        padding-top: 22px;
+        padding-bottom: 42px;
+    }
+ 
 }
 
 .pets-title {
     padding-bottom: 60px;
-}
 
+    @include tablet () {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    @include mobile () {
+        padding-bottom: 42px;
+    }
+}
 .pets-cards {
     display: flex;
     flex-direction: row;
@@ -19,11 +38,64 @@
     row-gap: 30px;
 }
 
+.pet-card:nth-child(n+3) {
+    @include desktop-special-s () {
+        display: block;
+    }
+
+    @include tablet () {
+        display: block;
+    }
+
+    @include desktop-s () {
+        display: block;
+    }
+}
+
+.pet-card:nth-last-child(-n+2) {
+    @include tablet () {
+        display: none;
+    }
+
+    @include mobile () {
+        display: none;
+    }
+}
+
+.pet-card:nth-child(1),
+.pet-card:nth-child(2),
+.pet-card:nth-child(3) {
+    
+    @include mobile () {
+        display: block;
+    }
+}
+
+.pet-card:nth-child(4),
+.pet-card:nth-child(5),
+.pet-card:nth-child(6) {
+    
+    @include mobile () {
+        display: none;
+    }
+}
+
+
 .pagination-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 57px;
+
+    @include tablet () {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    @include mobile () {
+        padding-bottom: 0;
+    }
+ 
 }
 
 .pagination-button {
@@ -31,8 +103,11 @@
     height: 52px;
     margin: 0 10px;
     padding-top: 5px;
-}
 
+    @include mobile () {
+        margin: 0 5px;
+    }
+}
 .inactive {
     border-radius: 100px;
     border: 2px solid var(--color-dark-s);

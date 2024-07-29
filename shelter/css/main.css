@@ -1577,9 +1577,32 @@ html {
   padding-bottom: 105px;
   background: var(--color-light-l);
 }
+@media (max-width: 768px) {
+  .pets {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .pets {
+    padding-top: 22px;
+    padding-bottom: 42px;
+  }
+}
 
 .pets-title {
   padding-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .pets-title {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .pets-title {
+    padding-bottom: 42px;
+  }
 }
 
 .pets-cards {
@@ -1591,11 +1614,65 @@ html {
   row-gap: 30px;
 }
 
+@media (max-width: 1179px) {
+  .pet-card:nth-child(n+3) {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .pet-card:nth-child(n+3) {
+    display: block;
+  }
+}
+@media (max-width: 1024px) {
+  .pet-card:nth-child(n+3) {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-card:nth-last-child(-n+2) {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .pet-card:nth-last-child(-n+2) {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .pet-card:nth-child(1),
+  .pet-card:nth-child(2),
+  .pet-card:nth-child(3) {
+    display: block;
+  }
+}
+
+@media (max-width: 320px) {
+  .pet-card:nth-child(4),
+  .pet-card:nth-child(5),
+  .pet-card:nth-child(6) {
+    display: none;
+  }
+}
+
 .pagination-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 57px;
+}
+@media (max-width: 768px) {
+  .pagination-container {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+}
+@media (max-width: 320px) {
+  .pagination-container {
+    padding-bottom: 0;
+  }
 }
 
 .pagination-button {
@@ -1603,6 +1680,11 @@ html {
   height: 52px;
   margin: 0 10px;
   padding-top: 5px;
+}
+@media (max-width: 320px) {
+  .pagination-button {
+    margin: 0 5px;
+  }
 }
 
 .inactive {
