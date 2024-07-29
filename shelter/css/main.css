@@ -456,6 +456,29 @@ html {
   transition: 0.3s;
 }
 
+.burger-menu--pets {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .burger-menu--pets {
+    display: flex;
+  }
+}
+
+.burger-bar--pets {
+  background-color: var(--color-dark-3xl);
+  height: 4px;
+  width: 100%;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
 .about {
   padding-top: 100px;
   padding-bottom: 100px;
