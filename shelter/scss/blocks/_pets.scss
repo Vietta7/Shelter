@@ -102,6 +102,10 @@
     @include mobile () {
         margin: 0 5px;
     }
+
+    @include mobile-m () {
+        margin: 0 5px;
+    }
 }
 .inactive {
     border-radius: 100px;
