@@ -1689,7 +1689,7 @@ html {
 .inactive {
   border-radius: 100px;
   border: 2px solid var(--color-dark-s);
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .active {
