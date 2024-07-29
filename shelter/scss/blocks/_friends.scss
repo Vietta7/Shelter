@@ -83,8 +83,12 @@
     @include tablet () {
         flex-wrap: nowrap;
         gap: 56px;
-        width: 100%;
+        max-width: 100%;
         justify-content: center;
+    }
+
+    @include desktop-s () {
+        column-gap: 30px;
     }
 }
 
@@ -207,6 +211,10 @@
 }
 
 .card:nth-child(n+3) {
+    @include desktop-special-s () {
+        display: none;
+    }
+
     @include tablet () {
         display: none;
     }

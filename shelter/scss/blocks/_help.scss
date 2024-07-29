@@ -35,6 +35,11 @@
     flex-wrap: wrap;
     justify-content: center;
 
+    @include desktop-s () {
+        gap: 20px;
+        justify-content: space-around;
+    }
+
     @include tablet () {
         gap: 20px;
         justify-content: space-around;
@@ -55,6 +60,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    @include desktop-s () {
+        width: calc(33.33% - 20px);
+    }
 
     @include tablet () {
         width: calc(33.33% - 20px);
