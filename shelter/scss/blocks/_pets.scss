@@ -69,14 +69,9 @@
     @include mobile () {
         display: block;
     }
-}
 
-.pet-card:nth-child(4),
-.pet-card:nth-child(5),
-.pet-card:nth-child(6) {
-    
-    @include mobile () {
-        display: none;
+    @include tablet () {
+        display: block;
     }
 }
 

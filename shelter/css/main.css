@@ -1648,12 +1648,11 @@ html {
     display: block;
   }
 }
-
-@media (max-width: 320px) {
-  .pet-card:nth-child(4),
-  .pet-card:nth-child(5),
-  .pet-card:nth-child(6) {
-    display: none;
+@media (max-width: 768px) {
+  .pet-card:nth-child(1),
+  .pet-card:nth-child(2),
+  .pet-card:nth-child(3) {
+    display: block;
   }
 }
 
