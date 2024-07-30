@@ -1,12 +1,12 @@
 // friends 
 
 .friends {
-    padding-top: 70px;
+    padding-top: 67px;
     padding-bottom: 100px;
     background-color: var(--color-light-s);
 
     @include tablet () {
-        padding-top: 20px;
+        padding-top: 80px;
     }
 
     @include mobile () {
@@ -23,10 +23,6 @@
     line-height: 130%;
     letter-spacing: 2.1px;
     padding-bottom: 60px;
-
-    @include tablet () {
-        padding-top: 63px;
-    }
 
     @include mobile () {
         font-size: 25px;
@@ -54,7 +50,7 @@
     @include mobile () {
         padding-left: 15px;
         padding-right: 15px;
-        padding-bottom: 110px;
+        padding-bottom: 0;
     }
 
     @include mobile-m() {
@@ -85,10 +81,6 @@
         gap: 56px;
         max-width: 100%;
         justify-content: center;
-    }
-
-    @include desktop-s () {
-        column-gap: 30px;
     }
 }
 

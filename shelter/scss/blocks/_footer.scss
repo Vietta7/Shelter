@@ -2,19 +2,7 @@
     background: url("../../img/header/noise-transparent.png"), 
                 radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
     background-repeat: repeat, no-repeat;
-    padding-top: 54px;
-
-    @include tablet () {
-        padding-top: 30px;
-    }
-
-    @include mobile () {
-        padding-top: 30px;
-    }
-
-    @include mobile-m () {
-        padding-top: 30px;
-    }
+    
 }
 
 .footer-grid {
@@ -29,26 +17,30 @@
     }
 
     @include desktop-special () {
-        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
     }
 
     @include desktop-special-s () {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 30px;
     }
 
     @include desktop-s () {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 30px;
     }
 
     @include tablet () {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 30px;
+       
+    }
+    
+    @include tablet-s () {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+       
     }
 
     @include mobile () {
@@ -90,6 +82,10 @@
 
 .footer-title-middle {
     margin-bottom: 35px;
+
+    @include mobile () {
+        margin-top: -29px;
+    }
 }
 
 .footer-info,
@@ -125,13 +121,16 @@
 }
 
 .footer-icon__middle {
+    margin-right: 40px;
+
     @include mobile () {
-        margin-left: -10px;
+        margin-right: 19px;
         max-width: 21px;
         max-height: 32px;
     }
 
     @include mobile-m () {
+        margin-right: 19px;
         margin-left: -10px;
         max-width: 21px;
         max-height: 32px;
@@ -195,20 +194,23 @@
         margin-top: 45px;
         margin-bottom: 45px;
     }
-
 }
 
 .footer-column--first {
-    grid-column: 1 / span 1; 
+    padding-top: 56px;
+    grid-column: 1 / span 2; 
 
-    @include desktop-s () {
+    
+    @include desktop () {
         grid-column: 1 / 2;
         margin-left: 23px;
+        padding-top: 30px;
     }
 
     @include tablet () {
         grid-column: 1 / 2;
         margin-left: 23px;
+        padding-top: 30px;
     }
 
     @include mobile () {
@@ -224,20 +226,35 @@
 
 
 .footer-column--middle {
-    grid-column: 3 / span 1; 
-    
+    padding-top: 56px;
+
+
+    @include desktop-s () {
+        grid-column: 2 / 3;
+        margin-right: 20px;
+        padding-top: 30px;
+        margin-left: 19px;
+    }
+
     @include desktop-special () {
-        grid-column: 2 / span 2;
+        grid-column: 2 / 3;
+        margin-right: 20px;
+        padding-top: 30px;
+        margin-left: 19px;
     }
 
     @include desktop-s () {
         grid-column: 2 / 3;
         margin-right: 20px;
+        padding-top: 30px;
+        margin-left: 19px;
     }
     
     @include tablet () {
         grid-column: 2 / 3;
         margin-right: 20px;
+        padding-top: 30px;
+        margin-left: 19px;
     }
 
     @include mobile () {
@@ -296,15 +313,22 @@
 }
 
 .footer-image {
+    padding-top: 40px;
     max-width: 100%;
     height: auto;
 
+    @include tablet () {
+        padding-top: 25px;
+    }
+
     @include mobile () {
         max-width: 90%;
+        padding-top: 0;
     }
 
     @include mobile-m () {
         max-width: 90%;
+        padding-top: 0;
     }
 }
 
@@ -318,3 +342,9 @@
         display: none;
     }
 }
+
+
+
+
+
+

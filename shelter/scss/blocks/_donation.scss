@@ -1,14 +1,15 @@
 // donation
 
 .donation {
-    padding-top: 80px;
     padding-bottom: 100px;
     background-color: var(--color-light-s);
 
     @include mobile () {
-        padding-top: 42px;
         padding-bottom: 42px;
-    } 
+    }
+    @include mobile-m () {
+        padding-bottom: 42px;
+    }
 }
 
 .about-donation {
@@ -60,18 +61,29 @@
         line-height: 130%; /* 32.5px */
         letter-spacing: 1.5px;
         text-align: center;
-        margin-bottom: -3px;
+        margin-bottom: -6px;
     }
 }
 
 .donation-img {
+    padding-top: 91px;
+
+    @include tablet () {
+        padding-top: 0;
+    }    
+
     @include mobile () {
         max-width: 260px;
     }
 }
 
 .donation-text-content {
+    padding-top: 81px;
     max-width: 380px;
+
+    @include mobile () {
+        padding-top: 41px;
+    }
 }
 
 .donation-personal {
@@ -109,6 +121,11 @@
     padding: 10px 15px;
     margin-bottom: 20px;
 
+    &:hover {
+        background-color: var(--color-primary);
+        transition: 0.3s;
+    }
+
     @include mobile () {
         max-width: 281px;
         margin-left: 9px;
@@ -126,7 +143,19 @@
     margin-right: 14px; 
 }
 
+.donation-number a {
+    text-decoration: none;
+}
+
 .number {
+    color: var(--color-dark-l);
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 115%; /* 23px */
+    letter-spacing: 1.2px;
+    text-decoration: none;
     margin: 0; 
 
     @include mobile () {
