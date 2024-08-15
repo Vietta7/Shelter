@@ -113,3 +113,20 @@ html {
     display: none !important; 
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s; 
+    z-index: 1; 
+}
+
+.header.open .overlay {
+    visibility: visible;
+    opacity: 1;
+}

@@ -128,11 +128,32 @@ html {
   display: none !important;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+  z-index: 1;
+}
+
+.header.open .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
 .header {
   padding-top: 30px;
   background: url("../../img/header/noise-transparent.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   background-repeat: repeat, no-repeat;
   background-size: auto, auto 908px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .header--header-pets {
@@ -199,6 +220,29 @@ html {
   padding-top: 9px;
 }
 
+@media (max-width: 767px) {
+  .nav {
+    position: absolute;
+    right: -823px;
+    top: 0;
+    max-width: 320px;
+    width: 100%;
+    max-height: 823px;
+    height: 100%;
+    background-color: var(--color-dark-3xl);
+    visibility: hidden;
+    transition: right 0.5s, left 0.7s ease;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .header.open .nav {
+    visibility: visible;
+    right: 0;
+  }
+}
+
 .nav-list {
   margin-left: auto;
   display: flex;
@@ -210,7 +254,15 @@ html {
 }
 @media (max-width: 767px) {
   .nav-list {
-    display: none;
+    display: block;
+    text-align: center;
+    padding-top: 158px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-list li {
+    margin-bottom: 40px;
   }
 }
 
@@ -223,6 +275,13 @@ html {
 }
 .nav-link:hover {
   color: var(--color-light-s);
+}
+@media (max-width: 767px) {
+  .nav-link {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 160%;
+  }
 }
 
 .nav-link--pets {
@@ -443,48 +502,31 @@ html {
 
 .burger-menu {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: transparent;
+  color: var(--color-dark-3xl);
+  position: relative;
   width: 30px;
   height: 30px;
-  cursor: pointer;
+  border: none;
+  transition: transform 0.5s ease;
+  z-index: 3;
 }
+
+.header.open .burger-menu {
+  transform: rotate(90deg);
+}
+
 @media (max-width: 767px) {
   .burger-menu {
-    display: flex;
+    display: block;
   }
 }
 
 .burger-bar {
   background-color: var(--color-primary);
-  height: 4px;
+  height: 2px;
   width: 100%;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-.burger-menu--pets {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-@media (max-width: 767px) {
-  .burger-menu--pets {
-    display: flex;
-  }
-}
-
-.burger-bar--pets {
-  background-color: var(--color-dark-3xl);
-  height: 4px;
-  width: 100%;
-  margin: 4px 0;
-  transition: 0.3s;
+  margin: 7px 0;
 }
 
 .about {

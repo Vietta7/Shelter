@@ -1,12 +1,32 @@
-console.log(
-    'Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14 \n',
-    'Вёрстка страницы Main соответствует макету при ширине экрана 768px: +14 \n',
-    'Вёрстка страницы Main соответствует макету при ширине экрана 320px: +14 \n',
-    'Вёрстка страницы Pets соответствует макету при ширине экрана 1280px: +6 \n',
-    'Вёрстка страницы Pets соответствует макету при ширине экрана 768px: +6 \n',
-    'Вёрстка страницы Pets соответствует макету при ширине экрана 320px: +6 \n ',
-    'Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки, справа от отдельных блоков не появляются белые поля. Весь контент страницы при этом сохраняется: не обрезается и не удаляется: +20 \n',
-    'Верстка резиновая: при плавном изменении размера экрана от 1280px до 320px верстка подстраивается под этот размер, элементы верстки меняют свои размеры и расположение, не наезжают друг на друга, изображения могут менять размер, но сохраняют правильные пропорции (Примеры неправильной и правильной реализации): +8 \n',
-    'При ширине экрана меньше 768px на обеих страницах меню в хедере скрывается, появляется иконка бургер-меню: +4 \n',
-    'Верстка обеих страниц валидная: для проверки валидности вёрстки используйте сервис https://validator.w3.org/ : +8'
-);
+// BURGER
+
+document.addEventListener("DOMContentLoaded", function(){
+    const burgerMenu = document.getElementById("burger-menu");
+    const header = document.querySelector(".header");
+    const overlay = document.getElementById("overlay");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // открыть бургер-меню
+    burgerMenu.addEventListener("click", function(){
+        header.classList.toggle("open");
+    });
+
+    // закрыть бургер-меню при нажатии на область
+    overlay.addEventListener("click", function(){
+        header.classList.remove("open");
+    });
+
+    // закрыть меню и убрать затемнение при нажатии на ссылку в меню
+    navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            header.classList.remove("open");
+        });
+    });
+
+    // закрыть меню при нажатии на эскейп
+    window.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            header.classList.remove("open");
+        }
+    });
+});

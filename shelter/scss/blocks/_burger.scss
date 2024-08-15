@@ -2,44 +2,33 @@
 
 .burger-menu {
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30px; 
-    height: 30px; 
-    cursor: pointer;
+    background: transparent;
+    color: var(--color-dark-3xl);
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: none;
+    transition: transform .5s ease;
+    z-index: 3;
+}
 
-    @include tablet-s () {
-        display: flex;
+
+.header.open .burger-menu {
+    transform: rotate(90deg);
+}
+
+.burger-menu {
+    @include tablet-s() {
+        display: block;
     }
 }
 
 .burger-bar {
     background-color: var(--color-primary); 
-    height: 4px; 
+    height: 2px; 
     width: 100%; 
-    margin: 4px 0; 
-    transition: 0.3s; 
+    margin: 7px 0; 
 }
 
-.burger-menu--pets {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30px; 
-    height: 30px; 
-    cursor: pointer;
-    
-    @include tablet-s () {
-        display: flex;
-    }
-}
 
-.burger-bar--pets {
-    background-color: var(--color-dark-3xl);
-    height: 4px; 
-    width: 100%; 
-    margin: 4px 0; 
-    transition: 0.3s; 
-}
+

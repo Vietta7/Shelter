@@ -6,7 +6,13 @@
                 radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
     background-repeat: repeat, no-repeat;
     background-size: auto, auto 908px;
+
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
+
+
 
 .header--header-pets {
     padding-top: 30px;
@@ -69,6 +75,30 @@
     padding-top: 9px;
 }
 
+
+.nav {
+    @include tablet-s() {
+        position: absolute;
+        right: -823px;
+        top: 0;
+        max-width: 320px;
+        width: 100%;
+        max-height: 823px;
+        height: 100%;
+        background-color: var(--color-dark-3xl);
+        visibility: hidden;
+        transition: right .5s, left .7s ease;
+        z-index: 2;
+    }
+}
+
+.header.open .nav {
+    @include tablet-s() {
+        visibility: visible;
+        right: 0;
+    }
+}
+
 .nav-list {
     margin-left: auto;
     display: flex;
@@ -78,11 +108,18 @@
     padding-top: 5px;
     padding-bottom: 8px;
 
-    @include tablet-s () {
-        display: none;
+    @include tablet-s() {
+        display: block;
+        text-align: center;
+        padding-top: 158px;
     }
 }
 
+.nav-list li {
+    @include tablet-s() {
+        margin-bottom: 40px;
+    }
+}
 
 .nav-link {
     font-family: var(--font-cards);
@@ -93,6 +130,12 @@
 
     &:hover {
         color: var(--color-light-s); 
+    }
+
+    @include tablet-s() {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 160%;
     }
 }
 
