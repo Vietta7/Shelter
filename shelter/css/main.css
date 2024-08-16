@@ -102,9 +102,12 @@ legend {
   display: block;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   transition: 0.5s;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -137,13 +140,24 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.3s, opacity 0.3s;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1;
 }
 
 .header.open .overlay {
   visibility: visible;
   opacity: 1;
+}
+
+body.open .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -156,7 +170,10 @@ html {
   position: relative;
 }
 
-.header--header-pets {
+.header-pets {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -222,8 +239,8 @@ html {
 
 @media (max-width: 767px) {
   .nav {
-    position: absolute;
-    right: -823px;
+    position: fixed;
+    right: -100%;
     top: 0;
     max-width: 320px;
     width: 100%;
@@ -231,8 +248,14 @@ html {
     height: 100%;
     background-color: var(--color-dark-3xl);
     visibility: hidden;
-    transition: right 0.5s, left 0.7s ease;
     z-index: 2;
+    transition: right 0.7s ease, visibility 0s 0.7s;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-pets {
+    background-color: var(--color-light-s);
   }
 }
 
@@ -240,6 +263,15 @@ html {
   .header.open .nav {
     visibility: visible;
     right: 0;
+    transition: right 0.7s ease, visibility 0s;
+  }
+}
+
+@media (max-width: 767px) {
+  body.open .nav {
+    visibility: visible;
+    right: 0;
+    transition: right 0.7s;
   }
 }
 
@@ -284,15 +316,23 @@ html {
   }
 }
 
-.nav-link--pets {
+.nav-link-pets {
   font-family: var(--font-cards);
   font-size: 15px;
   line-height: 160%;
   color: var(--color-dark-l);
   transition: 0.3s;
 }
-.nav-link--pets:hover {
+.nav-link-pets:hover {
   color: var(--color-dark-3xl);
+}
+@media (max-width: 767px) {
+  .nav-link-pets {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-dark-3xl);
+  }
 }
 
 .nav-link:active {
@@ -331,6 +371,11 @@ html {
   height: 2px;
   left: 0;
   bottom: -7px;
+}
+@media (max-width: 768px) {
+  .link-active--pets {
+    color: var(--color-dark-3xl);
+  }
 }
 
 .header-hero {
@@ -516,6 +561,10 @@ html {
   transform: rotate(90deg);
 }
 
+body.open .burger-menu {
+  transform: rotate(90deg);
+}
+
 @media (max-width: 767px) {
   .burger-menu {
     display: block;
@@ -527,6 +576,10 @@ html {
   height: 2px;
   width: 100%;
   margin: 7px 0;
+}
+
+.burger-bar-pets {
+  background-color: var(--color-dark-3xl);
 }
 
 .about {

@@ -13,7 +13,12 @@
 }
 
 
+
 .header.open .burger-menu {
+    transform: rotate(90deg);
+}
+
+body.open .burger-menu {
     transform: rotate(90deg);
 }
 
@@ -30,5 +35,8 @@
     margin: 7px 0; 
 }
 
+.burger-bar-pets{
+    background-color: var(--color-dark-3xl);
+}
 
 

@@ -7,27 +7,28 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Shelter</title>
 </head>
-<body>
+<body class="body-hidden">
     <!-- header -->
-    <header class="header--header-pets">
+    <header class="header-pets">
         <div class="container header-container">
             <div class="logo">
                 <a href="index.html" class="logo-title--pets">Cozy House</a><p class="logo-text--pets">Shelter for pets in Boston</p>
             </div>
-            <div class="nav">
+            <button class="burger-menu burger-menu-pets" id="burger-menu">
+                <div class="burger-bar burger-bar-pets"></div>
+                <div class="burger-bar burger-bar-pets"></div>
+                <div class="burger-bar burger-bar-pets"></div>
+            </button>
+            <div class="nav nav-pets" id="nav">
                 <ul class="nav-list">
-                    <li><a class="nav-link--pets" href="index.html">About the shelter</a></li>
-                    <li><a class="nav-link--pets link-active--pets" href="#no_scroll">Our pets</a></li>
-                    <li><a class="nav-link--pets" href="index.html#help">Help the shelter</a></li>
-                    <li><a class="nav-link--pets" href="#contacts">Contacts</a></li>
+                    <li><a class="nav-link nav-link-pets" href="index.html">About the shelter</a></li>
+                    <li><a class="nav-link nav-link-pets link-active--pets" href="#no_scroll">Our pets</a></li>
+                    <li><a class="nav-link nav-link-pets" href="index.html#help">Help the shelter</a></li>
+                    <li><a class="nav-link nav-link-pets" href="#contacts">Contacts</a></li>
                 </ul> 
             </div>
-            <div class="burger-menu--pets">
-                <div class="burger-bar--pets"></div>
-                <div class="burger-bar--pets"></div>
-                <div class="burger-bar--pets"></div>
-            </div>
         </div>
+    <div class="overlay" id="overlay"></div>
     </header>
     <!-- pets -->
     <section class="pets">
@@ -138,5 +139,6 @@
             </section> 
         </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

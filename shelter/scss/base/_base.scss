@@ -89,9 +89,12 @@ legend {
 }
 
 
-html {
+html, body {
     scroll-behavior: smooth;
 	transition: 0.5s;
+	height: 100%;
+	margin: 0;
+  	padding: 0;
 }
 
 .container {
@@ -122,11 +125,22 @@ html {
     background-color: rgba(0, 0, 0, 0.5); 
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.3s, opacity 0.3s; 
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     z-index: 1; 
 }
 
 .header.open .overlay {
     visibility: visible;
     opacity: 1;
+}
+
+body.open .overlay {
+	visibility: visible;
+	opacity: 1;
+}
+
+body.no-scroll {
+    position: fixed;
+    width: 100%;
+	overflow: hidden;
 }
