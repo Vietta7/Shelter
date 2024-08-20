@@ -1,5 +1,42 @@
 // pets
 
+.pets-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    @include desktop-special() {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include pet-cards-page() {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-modal() {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pets-cards {
+    display: flex;
+    column-gap: 90px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards.pets-cards .card:not(:nth-child(-n+6)) {
+    @include tablet() {
+        display: none; /* Скрыть карточки, кроме первых 6 */
+    }
+    
+}
+.cards.pets-cards .card:not(:nth-child(-n+3)) {
+    @include mobile() {
+        display: none; /* Скрыть карточки, кроме первых 3 */
+    }
+}
+
 .pets {
     padding-top: 80px;
     padding-bottom: 100px;
@@ -29,57 +66,8 @@
         padding-bottom: 42px;
     }
 }
-.pets-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 40px;
-    row-gap: 30px;
-}
 
-.pet-card:nth-child(n+3) {
-    @include desktop-special-s () {
-        display: block;
-    }
 
-    @include tablet () {
-        display: block;
-    }
-
-    @include desktop-s () {
-        display: block;
-    }
-}
-
-.pet-card:nth-last-child(-n+2) {
-    @include tablet () {
-        display: none;
-    }
-
-    @include mobile () {
-        display: none;
-    }
-}
-
-.pet-card:nth-last-child(-n+5) {
-    
-    @include mobile () {
-        display: none;
-}
-}
-.pet-card:nth-child(1),
-.pet-card:nth-child(2),
-.pet-card:nth-child(3) {
-    
-    @include mobile () {
-        display: block;
-    }
-
-    @include tablet () {
-        display: block;
-    }
-}
 
 
 .pagination-container {

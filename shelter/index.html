@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- header -->
-    <header class="header">
+    <header class="header none">
         <div class="container header-container">
             <div class="logo">
                 <a href="#no_scroll" class="logo-title">Cozy House<p class="logo-text">Shelter for pets in Boston</p></a>
@@ -55,7 +55,7 @@
         <div class="overlay" id="overlay"></div>
     </header>
     <!-- about -->
-    <div class="about" id="about" >
+    <div class="about none" id="about" >
         <div class="container">
             <section class="about-section">
                 <div class="about-content">
@@ -81,38 +81,26 @@
     <section class="friends" id="friends">
         <div class="container">
             <h2 class="our-friends__title">Our friends who <br> are looking for a house</h2>
+            <button class="slider__btn slider__btn--prev">
+                <img src="./img/icons/slider/slider-left.svg" alt="Previous">
+            </button>
             <div class="friends-slider-wrapper">
-                <button class="slider__btn slider__btn--prev">
-                    <img src="./img/icons/slider/slider-left.svg" alt="Previous">
-                </button>
                 <div class="friends-slider">
+                    <!-- generation cards -->
                     <div class="cards">
-                        <div class="card" data-name="Katrine">
-                            <img class="card-photo" src="./img/friends/pets-katrine.png" alt="Katrine">
-                            <h4 class="card-title">Katrine</h4>
-                            <button class="button-card">Learn more</button>
-                        </div>
-                        <div class="card" data-name="Jennifer">
-                            <img class="card-photo" src="./img/friends/pets-jennifer.png" alt="Jennifer">
-                            <h4 class="card-title">Jennifer</h4>
-                            <button class="button-card">Learn more</button>
-                        </div>
-                        <div class="card" data-name="Woody">
-                            <img class="card-photo" src="./img/friends/pets-woody.png" alt="Woody">
-                            <h4 class="card-title">Woody</h4>
-                            <button class="button-card">Learn more</button>
-                        </div>
+                        <div class="main-page" id="cards-container"></div>
                     </div>
                 </div>
-                <button class="slider__btn slider__btn--next">
-                    <img src="./img/icons/slider/slider-right.svg" alt="Next">
-                </button>
             </div>
+            <button class="slider__btn slider__btn--next">
+                <img src="./img/icons/slider/slider-right.svg" alt="Next">
+            </button>            
+            <a href="pets.html" class="button-primary primary-center">Get to know the rest</a>
         </div>
-        <a href="pets.html" class="button-primary primary-center">Get to know the rest</a>
+        
     </section>
     <!-- help -->
-    <section class="help" id="help">
+    <section class="help none" id="help">
         <div class="container">
             <h2 class="help-title">How you can help <br> our shelter</h2>
             <div class="help-block">
@@ -155,7 +143,7 @@
         </div>
     </section>
     <!-- donation-->
-    <div class="donation">
+    <div class="donation none">
         <div class="container">
             <section class="donation-section">
                 <div class="about-donation">
@@ -177,7 +165,7 @@
         </div>
     </div>
     <!-- footer -->
-    <footer class="footer" id="contacts">
+    <footer class="footer none" id="contacts">
         <div class="container">
             <section class="footer-grid">
                 <div class="footer-column--first">

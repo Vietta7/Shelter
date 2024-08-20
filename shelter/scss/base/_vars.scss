@@ -74,3 +74,9 @@
 		@content;
 	}
 }
+
+@mixin pet-cards-page(){
+	@media (max-width: 900px) {
+		@content;
+	}
+}

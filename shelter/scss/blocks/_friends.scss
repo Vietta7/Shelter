@@ -1,6 +1,8 @@
 // friends 
 
 .friends {
+    display: flex;
+    align-items: center;
     padding-top: 67px;
     padding-bottom: 100px;
     background-color: var(--color-light-s);
@@ -14,6 +16,10 @@
         padding-bottom: 42px;
     }
 }
+
+// .cards, .friends-slider, .main-page {
+//     display: flex;
+// }
 
 .our-friends__title {
     text-align: center;
@@ -35,116 +41,71 @@
     }
 }
 
-.friends-slider-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 58px;
-
-    @include tablet () {
-        padding-right: 64px;
-        padding-left: 64px;
-    }
-
-    @include mobile () {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 0;
-    }
-
-    @include mobile-m() {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 110px;
-    }
-}
-
-.friends-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
 .primary-center {
     margin: 0 auto;
     width: 261px;
-}
-
-.cards {
-    display: flex;
-    column-gap: 90px;
-
-    @include tablet () {
-        flex-wrap: nowrap;
-        gap: 56px;
-        max-width: 100%;
-        justify-content: center;
-    }
-}
-
-.card {
-    width: 270px;
-    height: 435px;
-    background-color: var(--color-light-s);
-    cursor: pointer;
-    border-radius: 9px;
-    transition: 0.4s;
-    
-    &:hover {
-        background-color: var(--color-light-xl);
-        transition: 0.4s;
-        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);  
-    }   
-
-    &:hover .button-card {
-        transition: 0.4s;
-        background-color: var(--color-primary-light);
-        border: 2px solid var(--color-primary-light);
-    }
+    margin-top: 60px;
 }
 
 
+// .friends-slider-wrapper {
+//     overflow: hidden;
+//     width: 100%;
+//     margin: 0 auto;
+// }
 
-.card-photo {
-    border-radius: 9px 9px 0 0;
-    width: 270px;
-    height: 270px;
-}
+// .main-page {
+//     gap: 97px;
+// }
 
-.card-title {
-    padding: 30px 0;
-    text-align: center;
-    color: var(--color-dark-l);
-    font-family: var(--font-main);
-    font-size: 20px;
-    letter-spacing: 1.2px;
-}
+// .friends-slider {
+//     position: relative;
+//     left: -640px;
+// }
 
-.button-card {
-    display: block;
-    width: 187px;
-    height: 52px;
-    text-align: center;
-    border: 2px solid var(--color-primary);
-    border-radius: 100px;
-    margin: 0 auto;
-    font-family: var(--font-main);
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: var(--color-dark-3xl);
+// .friends-slider-wrapper {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     padding-bottom: 58px;
 
-    &:hover {
-        transition: 0.4s;
-        background-color: var(--color-primary-light);
-        border: 2px solid var(--color-primary-light);
-    }
-}
+
+//     @include tablet () {
+//         padding-right: 64px;
+//         padding-left: 64px;
+//     }
+
+//     @include mobile () {
+//         padding-left: 15px;
+//         padding-right: 15px;
+//         padding-bottom: 0;
+//     }
+
+//     @include mobile-m() {
+//         padding-left: 15px;
+//         padding-right: 15px;
+//         padding-bottom: 110px;
+//     }
+// }
+
+// .friends-slider {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+// }
+
+
+
+// .main-page {
+//     display: flex;
+// }
 
 .slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 52px;
     height: 52px;
     padding-left: 19px;
@@ -156,93 +117,66 @@
     cursor: pointer;
     transition: 0.3s;
     background-color: var(--color-light-s);
+   
 
     &:hover {
         background-color: var(--color-primary-light);
         border: 2px solid var(--color-primary-light);
     }
-
-    @include tablet () {
-        position: absolute;
-        width: 52px;
-        height: 52px;
-        padding-left: 17px;
-        padding-right: 17px;
-        padding-top: 21px;
-        padding-bottom: 23px;
-    }
 }
 
+//     @include tablet () {
+//         position: absolute;
+//         width: 52px;
+//         height: 52px;
+//         padding-left: 17px;
+//         padding-right: 17px;
+//         padding-top: 21px;
+//         padding-bottom: 23px;
+//     }
+// }
+
 .slider__btn--prev {
-    left: -25px;
-
-    @include tablet () {
-        left: -10px;
-    }
-
-    @include mobile () {
-        left: 57px;
-        top: 83%;
-    }
-
-    @include mobile-m () {
-        left: 57px;
-        top: 83%;
-    }
+    left: -60px; /* Располагаем кнопку слева за границей слайдера */
 }
 
 .slider__btn--next {
-    right: -25px;
-
-    @include tablet () {
-        right: -10px;
-    }
-
-    @include mobile () {
-        right: 57px;
-        top: 83%;
-    }
-
-    @include mobile-m () {
-        right: 57px;
-        top: 83%;
-    }
-
+    right: -60px; /* Располагаем кнопку справа за границей слайдера */
 }
+// .slider__btn--prev {
+//     left: -25px;
 
-.card:nth-child(n+3) {
-    @include desktop-special-s () {
-        display: none;
-    }
+//     @include tablet () {
+//         left: -10px;
+//     }
 
-    @include tablet () {
-        display: none;
-    }
+//     @include mobile () {
+//         left: 57px;
+//         top: 83%;
+//     }
 
-    @include desktop-s () {
-        display: none;
-    }
+//     @include mobile-m () {
+//         left: 57px;
+//         top: 83%;
+//     }
+// }
 
-    @include mobile () {
-        display: none;
-    }
+// .slider__btn--next {
+//     right: -25px;
+// }
+//     @include tablet () {
+//         right: -10px;
+//     }
 
-    @include mobile-m () {
-        display: none;
-    }
-}
+//     @include mobile () {
+//         right: 57px;
+//         top: 83%;
+//     }
 
-.card:nth-child(n+2) {
+//     @include mobile-m () {
+//         right: 57px;
+//         top: 83%;
+//     }
 
-    @include tablet-s () {
-        display: none;
-    }
+// }
 
-    @include mobile () {
-        display: none;
-    }
-
-    @include mobile-m () {
-        display: none;
-    }
-}
