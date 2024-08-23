@@ -26,10 +26,13 @@
 }
 
 .cards.pets-cards .card:not(:nth-child(-n+6)) {
+    @include desktop() {
+        display: none;
+    }
+
     @include tablet() {
         display: none; /* Скрыть карточки, кроме первых 6 */
     }
-    
 }
 .cards.pets-cards .card:not(:nth-child(-n+3)) {
     @include mobile() {
@@ -68,8 +71,6 @@
 }
 
 
-
-
 .pagination-container {
     display: flex;
     justify-content: center;
@@ -102,6 +103,14 @@
     }
 }
 
+.button-number {
+    font-family: var(--font-main);
+    border-radius: 100px;
+    background: var(--color-primary);
+    font-size: 20px;
+    padding-top: 0;
+}
+
 .inactive {
     border-radius: 100px;
     border: 2px solid var(--color-dark-s);
@@ -109,7 +118,7 @@
     cursor: not-allowed;
 }
 
-.active {
+.pagination-button.active {
     border-radius: 100px;
     background: transparent;
     border: 2px solid var(--color-primary);
@@ -120,8 +129,3 @@
     }
 }
 
-.active-page {
-    border-radius: 100px;
-    background: var(--color-primary);
-    cursor: default;
-}

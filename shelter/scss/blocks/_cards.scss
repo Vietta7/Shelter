@@ -1,14 +1,15 @@
 .cards {
     display: flex;
     column-gap: 90px;
+    justify-content: center;
 
     @include tablet () {
         flex-wrap: nowrap;
         gap: 56px;
         max-width: 100%;
-        justify-content: center;
     }
 }
+
 
 .card {
     width: 270px;

@@ -156,6 +156,7 @@ body.open .overlay {
 }
 
 body.no-scroll {
+  position: fixed;
   width: 100%;
   overflow: hidden;
 }
@@ -734,10 +735,68 @@ body.open .burger-menu {
   margin-top: 60px;
 }
 
+.main-page {
+  display: flex;
+  column-gap: 90px;
+}
+
+.friends-slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  position: relative;
+}
+
+.friends-slider {
+  display: flex;
+  justify-content: center;
+  gap: 90px; /* Отступы между карточками */
+  overflow: hidden; /* Скрываем лишний контент за пределами слайдера */
+  width: 1060px; /* Ширина слайдера за вычетом кнопок */
+}
+@media (max-width: 768px) {
+  .friends-slider {
+    gap: 40px;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 320px) {
+  .friends-slider {
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+.carousel-card {
+  flex: 0 0 270px;
+  box-sizing: border-box;
+}
+
+.slider__btn-prev,
+.slider__btn-next {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-light-s);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__btn-prev {
+  left: 0;
+}
+
+.slider__btn-next {
+  right: 0;
+}
+
 .slider__btn {
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
+  top: 50%;
   width: 52px;
   height: 52px;
   padding-left: 19px;
@@ -753,14 +812,6 @@ body.open .burger-menu {
 .slider__btn:hover {
   background-color: var(--color-primary-light);
   border: 2px solid var(--color-primary-light);
-}
-
-.slider__btn--prev {
-  left: -60px; /* Располагаем кнопку слева за границей слайдера */
-}
-
-.slider__btn--next {
-  right: -60px; /* Располагаем кнопку справа за границей слайдера */
 }
 
 .help {
@@ -1572,6 +1623,11 @@ body.open .burger-menu {
   justify-content: center;
 }
 
+@media (max-width: 1279px) {
+  .cards.pets-cards .card:not(:nth-child(-n+6)) {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   .cards.pets-cards .card:not(:nth-child(-n+6)) {
     display: none; /* Скрыть карточки, кроме первых 6 */
@@ -1652,26 +1708,28 @@ body.open .burger-menu {
   }
 }
 
+.button-number {
+  font-family: var(--font-main);
+  border-radius: 100px;
+  background: var(--color-primary);
+  font-size: 20px;
+  padding-top: 0;
+}
+
 .inactive {
   border-radius: 100px;
   border: 2px solid var(--color-dark-s);
   cursor: not-allowed;
 }
 
-.active {
+.pagination-button.active {
   border-radius: 100px;
   background: transparent;
   border: 2px solid var(--color-primary);
 }
-.active:hover {
+.pagination-button.active:hover {
   border: 2px solid var(--color-primary-light);
   background: var(--color-primary-light);
-}
-
-.active-page {
-  border-radius: 100px;
-  background: var(--color-primary);
-  cursor: default;
 }
 
 #modals-container {
@@ -1943,13 +2001,13 @@ body.open .burger-menu {
 .cards {
   display: flex;
   column-gap: 90px;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .cards {
     flex-wrap: nowrap;
     gap: 56px;
     max-width: 100%;
-    justify-content: center;
   }
 }
 

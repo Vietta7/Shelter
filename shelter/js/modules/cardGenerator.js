@@ -13,3 +13,6 @@ export function generateCards(containerId, layout = 'grid') {
         </div>
     `).join('');
 }
+
+
+

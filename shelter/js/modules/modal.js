@@ -1,7 +1,6 @@
 import { petsData } from './petsData.js';
 
 export function initModal() {
-    // Получаем контейнер для модальных окон по его идентификатору
     const modalsContainer = document.getElementById('modals-container');
 
     function createModal(pet) {
@@ -27,24 +26,33 @@ export function initModal() {
     }
 
     // Функция для отображения модального окна
+    
     function showModal(petName) {
-        // Находим объект питомца по имени
-        const pet = petsData.find(p => p.name.toLowerCase() === petName);
-        
-        const modalHTML = createModal(pet);
-            // Очищаем предыдущие модальные окна
-        modalsContainer.innerHTML = '';
-            // Вставляем новое модальное окно в контейнер
-        modalsContainer.insertAdjacentHTML('beforeend', modalHTML);
-        modalsContainer.style.display = 'flex'; 
-        document.getElementById(`${petName}-modal`).classList.add('active-modal');
-        document.body.classList.toggle('no-scroll');
-        
+        const pet = petsData.find(p => p.name.toLowerCase() === petName.toLowerCase());
+
+        if (pet) { // Проверяем, найден ли питомец
+            const modalHTML = createModal(pet);
+            modalsContainer.innerHTML = '';
+            modalsContainer.insertAdjacentHTML('beforeend', modalHTML);
+            modalsContainer.style.display = 'flex'; 
+            document.getElementById(`${petName.toLowerCase()}-modal`).classList.add('active-modal');
+            document.body.classList.add('no-scroll');
+        } 
     }
+
+    document.body.addEventListener('click', function(e) {
+        const card = e.target.closest('.card');
+        if (card) {
+            const petName = card.getAttribute('data-name');
+            if (petName) {  // Проверяем, существует ли data-name
+                showModal(petName);
+            }
+        }
+    });
 
     // Обработчик кликов по всему документу
     document.body.addEventListener('click', function(e) {
-        // Находим ближайший элемент с классом 'card' к цели клика
+        
         const card = e.target.closest('.card');
         if (card) {
             const petName = card.getAttribute('data-name').toLowerCase();
