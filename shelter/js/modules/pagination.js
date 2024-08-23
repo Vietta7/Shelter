@@ -25,7 +25,6 @@ function generateShuffledPages() {
         }
     });
 
-    
     shuffleArray(allPets);
 
     const pages = [];
@@ -35,6 +34,7 @@ function generateShuffledPages() {
         const currentPage = [];
         petsOnPage.clear();
 
+        let attempts = 0; 
         while (currentPage.length < petsPerPage && allPets.length) {
             const pet = allPets.shift();
 
@@ -42,8 +42,13 @@ function generateShuffledPages() {
                 currentPage.push(pet);
                 petsOnPage.add(pet.name);
             } else {
-                allPets.push(pet); 
+                if (attempts >= allPets.length) {
+                    currentPage.push(pet);  
+                } else {
+                    allPets.push(pet);  
+                }
             }
+            attempts++;
         }
         pages.push(currentPage);
     }
@@ -74,6 +79,7 @@ function updatePagesToShow() {
         const currentPage = [];
         const petsOnPage = new Set();
 
+        let attempts = 0; 
         while (currentPage.length < petsPerPage && allPets.length) {
             const pet = allPets.shift();
 
@@ -81,8 +87,13 @@ function updatePagesToShow() {
                 currentPage.push(pet);
                 petsOnPage.add(pet.name);
             } else {
-                allPets.push(pet);
+                if (attempts >= allPets.length) {
+                    currentPage.push(pet);  
+                } else {
+                    allPets.push(pet);  
+                }
             }
+            attempts++;
         }
         shuffledPages.push(currentPage);
     }
@@ -151,11 +162,12 @@ function handleResize() {
     updatePaginationButtons();
 }
 
-window.addEventListener('resize', debounce(handleResize, 200));
+window.addEventListener('resize', debounce(handleResize, 300));
 
 // Обновить рендеринг карточек
 function renderCards() {
     const container = document.querySelector('#cards-container');
+    const fragment = document.createDocumentFragment();
     
     clearPreviousCards(); 
     
@@ -170,8 +182,10 @@ function renderCards() {
             <h4 class="card-title">${pet.name}</h4>
             <button class="button-card">Learn more</button>
         `;
-        container.appendChild(card);
+        fragment.appendChild(card);
     });
+
+    container.appendChild(fragment);
 }
 
 function clearPreviousCards() {
