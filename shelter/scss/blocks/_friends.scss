@@ -40,7 +40,7 @@
 .primary-center {
     margin: 0 auto;
     width: 261px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .friends-cards-slider {
@@ -49,12 +49,13 @@
     justify-content: center;
     gap: 90px;
     overflow: hidden;
-    transition: transform 0.5s ease-in-out;
+    
 
     @include desktop() {
         gap: 40px;
     }
 }
+
 .friends-slider-wrapper {
     position: relative;
     width: 100%;
@@ -64,11 +65,10 @@
 .friend-card {
     box-sizing: border-box;
     padding: 10px;
-    min-width: 270px
+    min-width: 270px;
 }
 
 .slider__btn {
-    position: absolute;
     transform: translateY(-50%);
     top: 50%;
     width: 52px;
@@ -82,7 +82,6 @@
     cursor: pointer;
     transition: 0.3s;
     background-color: var(--color-light-s);
-   
 
     &:hover {
         background-color: var(--color-primary-light);
@@ -98,29 +97,27 @@
     right: 20px;
 }
 
-.slide-left {
-    animation: slide-left 0.5s ease-in-out forwards; 
-}
 
-.slide-right {
-    animation: slide-right 0.5s ease-in-out forwards;
-}
+.button-container {
+    position: absolute;
+    top: 44%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-@keyframes slide-left {
-    0% {
-        transform: translateX(0);
+    @include mobile-m () {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 30px;
     }
-    100% {
-        transform: translateX(-100%);
+
+    @include mobile () {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 30px;
     }
 }
-
-@keyframes slide-right {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-

@@ -732,7 +732,7 @@ body.open .burger-menu {
 .primary-center {
   margin: 0 auto;
   width: 261px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .friends-cards-slider {
@@ -741,7 +741,6 @@ body.open .burger-menu {
   justify-content: center;
   gap: 90px;
   overflow: hidden;
-  transition: transform 0.5s ease-in-out;
 }
 @media (max-width: 1279px) {
   .friends-cards-slider {
@@ -762,7 +761,6 @@ body.open .burger-menu {
 }
 
 .slider__btn {
-  position: absolute;
   transform: translateY(-50%);
   top: 50%;
   width: 52px;
@@ -790,30 +788,32 @@ body.open .burger-menu {
   right: 20px;
 }
 
-.slide-left {
-  animation: slide-left 0.5s ease-in-out forwards;
+.button-container {
+  position: absolute;
+  top: 44%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 750px) {
+  .button-container {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .button-container {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 30px;
+  }
 }
 
-.slide-right {
-  animation: slide-right 0.5s ease-in-out forwards;
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes slide-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
 .help {
   padding-bottom: 100px;
 }

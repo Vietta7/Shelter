@@ -2,6 +2,7 @@ import petsData from './petsData.js';
 
 export function initSlider() { 
     let currentIndex = 0;
+    let indexHistory = [0];
     const slider = document.querySelector('.friends-cards-slider');
 
     function generateCards(startIndex, cardsToShow) {
@@ -32,39 +33,33 @@ export function initSlider() {
             cardsToShow = 2;
         }
 
-        generateCards(currentIndex, cardsToShow);
-    }
-
-    function applySlideAnimation(direction) {
-        if (direction === 'next') {
-            slider.classList.add('slide-left');
-        } else {
-            slider.classList.add('slide-right');
-        }
-
-        
-        setTimeout(() => {
-            slider.classList.remove('slide-left', 'slide-right');
-            updateCards();
-        }, 500); 
+        generateCards(indexHistory[currentIndex], cardsToShow);
     }
 
     document.querySelector('.slider__btn-next').addEventListener('click', () => {
         const screenWidth = window.innerWidth;
         const step = screenWidth < 768 ? 1 : (screenWidth < 1280 ? 2 : 3);
-        currentIndex = (currentIndex + step) % petsData.length;
-        applySlideAnimation('next');
+        
+        currentIndex++;
+        const nextIndex = (indexHistory[currentIndex - 1] + step) % petsData.length;
+        if (currentIndex >= indexHistory.length) {
+            indexHistory.push(nextIndex);
+        }
+        
+        updateCards();
     });
 
     document.querySelector('.slider__btn-prev').addEventListener('click', () => {
-        const screenWidth = window.innerWidth;
-        const step = screenWidth < 768 ? 1 : (screenWidth < 1280 ? 2 : 3);
-        currentIndex = (currentIndex - step + petsData.length) % petsData.length;
-        applySlideAnimation('prev');
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = indexHistory.length - 1;
+        }
+
+        updateCards();
     });
 
     window.addEventListener('resize', updateCards);
 
     updateCards();
 }
-
