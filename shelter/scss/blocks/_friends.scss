@@ -49,7 +49,6 @@
     justify-content: center;
     gap: 90px;
     overflow: hidden;
-    
 
     @include desktop() {
         gap: 40px;
@@ -96,7 +95,6 @@
 .slider__btn-next {
     right: 20px;
 }
-
 
 .button-container {
     position: absolute;

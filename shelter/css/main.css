@@ -1804,6 +1804,8 @@ body.open .burger-menu {
   background: var(--color-light-s);
   border-radius: 9px;
   overflow: auto;
+  display: block;
+  margin: auto;
 }
 @media (max-width: 1024px) {
   .modal {

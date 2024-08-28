@@ -69,6 +69,8 @@
     background: var(--color-light-s);
     border-radius: 9px;
     overflow: auto; 
+    display: block; 
+    margin: auto;
 
     @include desktop-s() {
         max-width: 95%;
